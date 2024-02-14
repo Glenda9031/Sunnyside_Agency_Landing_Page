@@ -1,0 +1,171 @@
+/* Universal Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --soft-red: hsl(7, 99%, 70%);
+    --yellow: hsl(51, 100%, 49%);
+    --dark-desaturated-cyan: hsl(167, 40%, 24%); /* graphic design text */
+    --dark-blue: hsl(198, 62%, 26%); /* photography text */
+    --dark-moderate-cyan: hsl(168, 34%, 41%); /* footer */
+  
+    --very-dark-desaturated-blue: hsl(212, 27%, 19%);
+    --very-dark-grayish-blue: hsl(213, 9%, 39%);
+    --dark-grayish-blue: hsl(232, 10%, 55%);
+    --grayish-blue: hsl(210, 4%, 67%);
+    --white: hsl(0, 0%, 100%);
+    --footer-bg: #90d4c5;
+  }
+
+html {
+    font-size: 16px;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+}
+
+.img-mobile {
+    display: none;
+}
+
+/* Header Styles */
+
+header {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.header-content > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.header-content > .content {
+    position: absolute;
+    display: grid;
+    gap: 2.25rem;
+    place-items: center;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+
+.header-content > .content h1 {
+    font-family: 'Fraunces', sans-serif;
+    font-weight: 800;
+    color: var(--white);
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    white-space: nowrap;
+    margin-top: 1rem;
+}
+
+.header-content > .content > img {
+    height: 7.5rem;
+    width: auto;
+    animation: arrow-down-move 1s ease-in infinite alternate;
+}
+
+@keyframes arrow-down-move {
+    to {
+        transform: translateY(2.5rem);
+    }
+}
+
+/* Nav Styling */
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.toolbar > img.logo {
+    width: 12.5rem;
+    min-width: 12.5rem;
+}
+
+.toolbar nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.toolbar nav ul a {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    color: var(--white);
+    font-size: 1.125rem;
+    text-decoration: none;
+}
+
+.toolbar nav ul a:not(.contact)::before {
+    content: '';
+    position: absolute;
+    bottom: .375rem;
+    height: .1875rem;
+    border-radius: .125rem;
+    width: 100%;
+    transition: transform 0.3s;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.toolbar nav ul a:not(.contact):hover:before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.toolbar nav li a.contact {
+    font-family: 'Franceus', sans-serif;
+    color: var(--very-dark-desaturated-blue);
+    background-color: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: 1.5rem;
+    text-transform: uppercase;
+    font-size: .875rem;
+    transition: 0.2s;
+}
+
+.toolbar nav li a.contact:hover {
+    color: var(--white);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.toolbar > button.hamburger {
+    display: none;
+    width: 1.5rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+.toolbar > button.hamburger img {
+    width: 100%;
+    height: 100%;
+}
+
+
+  
+  
